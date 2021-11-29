@@ -72,3 +72,17 @@ class SearchBar extends StatelessWidget {
 Widget spacer(double size) => SizedBox(
       height: size,
     );
+Widget defaultButton(double width, String title) {
+  return Container(
+    width: width,
+    height: 50,
+    decoration: BoxDecoration(
+        color: blackColor, borderRadius: BorderRadius.circular(15)),
+    child: Center(
+      child: Text(
+        title,
+        style: const TextStyle(color: Colors.white),
+      ),
+    ),
+  );
+}

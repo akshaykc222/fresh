@@ -15,15 +15,17 @@ const String enquiry = "/enquiry";
 const String customers = "/customers";
 const String designation = "/Designation";
 const String reports = "/reports";
+const String roleList = "/roleList";
 //strings
-const String search = "earch";
+const String search = "Search";
 const String currentuser = "Current User";
 const String rolename = "Role Name";
 const String save = "Save";
 const String addcompany = "Add company";
 const String create = "Create";
 const String add = "Add";
-const String roleList = "/roleList";
+
+const String addUserRole = "Add User Role";
 //images
 
 //colors

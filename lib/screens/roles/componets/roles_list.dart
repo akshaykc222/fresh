@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:seed_sales/componets.dart';
 import 'package:seed_sales/constants.dart';
 import 'package:seed_sales/sizeconfig.dart';
 
@@ -88,6 +89,48 @@ class _RoleListState extends State<RoleList> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
+}
+
+class AddUserRole extends StatefulWidget {
+  const AddUserRole({Key? key}) : super(key: key);
+
+  @override
+  State<AddUserRole> createState() => _AddUserRoleState();
+}
+
+class _AddUserRoleState extends State<AddUserRole> {
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      child: Column(
+        children: [
+          const Text(
+            addUserRole,
+            style: TextStyle(color: Colors.black, fontSize: 20),
+          ),
+          spacer(10),
+          roleName()
+        ],
+      ),
+    );
+  }
+}
+
+Widget roleName() {
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: TextFormField(
+      decoration: const InputDecoration(
+        border: UnderlineInputBorder(),
+        hintText: 'Role Name',
+        labelText: 'Role Name',
+        labelStyle: TextStyle(fontSize: 18, color: Colors.black),
+        fillColor: Colors.white,
+        filled: true,
+        floatingLabelBehavior: FloatingLabelBehavior.auto,
+      ),
+    ),
+  );
 }
 
 class UserRoleList extends StatelessWidget {
