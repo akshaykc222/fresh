@@ -5,18 +5,18 @@ import 'package:seed_sales/constants.dart';
 import 'package:seed_sales/screens/dashbord/componets/dashboard_items.dart';
 
 class DashBoard extends StatefulWidget {
-  const DashBoard({ Key? key }) : super(key: key);
+  const DashBoard({Key? key}) : super(key: key);
 
   @override
   State<DashBoard> createState() => _DashBoardState();
 }
 
 class _DashBoardState extends State<DashBoard> {
-   final _advancedDrawerController = AdvancedDrawerController();
+  final _advancedDrawerController = AdvancedDrawerController();
   @override
   Widget build(BuildContext context) {
     return AdvancedDrawer(
-        backdropColor: Colors.blueGrey,
+      backdropColor: Colors.blueGrey,
       controller: _advancedDrawerController,
       animationCurve: Curves.easeInOut,
       animationDuration: const Duration(milliseconds: 300),
@@ -36,7 +36,7 @@ class _DashBoardState extends State<DashBoard> {
       ),
       child: Scaffold(
         appBar: AppBar(
-           leading: IconButton(
+          leading: IconButton(
             onPressed: _handleMenuButtonPressed,
             icon: ValueListenableBuilder<AdvancedDrawerValue>(
               valueListenable: _advancedDrawerController,
@@ -51,101 +51,106 @@ class _DashBoardState extends State<DashBoard> {
               },
             ),
           ),
-          title:const Text("Fresh",style: TextStyle(fontSize: 20),),backgroundColor: primaryColor,actions:const [
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Icon(Icons.search),
-          )
-        ],),
-        body: Column(
-          children:const [
-             DashBoardItems()
+          title: const Text(
+            "Fresh",
+            style: TextStyle(fontSize: 20),
+          ),
+          backgroundColor: primaryColor,
+          actions: const [
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Icon(Icons.search),
+            )
           ],
         ),
+        body: Column(
+          children: const [DashBoardItems()],
+        ),
       ),
-       drawer: SafeArea(
-        child: Container(
-          child: ListTileTheme(
-            textColor: Colors.white,
-            iconColor: Colors.white,
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Container(
-                  width: 128.0,
-                  height: 128.0,
-                  margin: const EdgeInsets.only(
-                    top: 24.0,
-                    bottom: 64.0,
+      drawer: SafeArea(
+        child: ListTileTheme(
+          textColor: Colors.white,
+          iconColor: Colors.white,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Container(
+                width: 128.0,
+                height: 128.0,
+                margin: const EdgeInsets.only(
+                  top: 24.0,
+                  bottom: 64.0,
+                ),
+                clipBehavior: Clip.antiAlias,
+                decoration: const BoxDecoration(
+                  color: Colors.black26,
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(Icons.flutter_dash),
+              ),
+              ListTile(
+                onTap: () {
+                  Navigator.pushNamed(context, roles);
+                },
+                leading: const Icon(Icons.lock),
+                title: const Text('Roles'),
+              ),
+              ListTile(
+                onTap: () {},
+                leading: const Icon(Icons.account_circle_rounded),
+                title: const Text('Users'),
+              ),
+              ListTile(
+                onTap: () {},
+                leading: const Icon(Icons.business),
+                title: const Text('Bussiness'),
+              ),
+              ListTile(
+                onTap: () {},
+                leading: const Icon(Icons.category),
+                title: const Text('Categories'),
+              ),
+              ListTile(
+                onTap: () {},
+                leading: const Icon(Icons.production_quantity_limits),
+                title: const Text('Products'),
+              ),
+              ListTile(
+                onTap: () {},
+                leading: const Icon(Icons.pages),
+                title: const Text('Reports'),
+              ),
+              ListTile(
+                onTap: () {},
+                leading: const Icon(Icons.person),
+                title: const Text('Designations'),
+              ),
+              ListTile(
+                onTap: () {},
+                leading: const Icon(Icons.person),
+                title: const Text('Sales'),
+              ),
+              const Spacer(),
+              DefaultTextStyle(
+                style: const TextStyle(
+                  fontSize: 12,
+                  color: Colors.white54,
+                ),
+                child: Container(
+                  margin: const EdgeInsets.symmetric(
+                    vertical: 16.0,
                   ),
-                  clipBehavior: Clip.antiAlias,
-                  decoration:const BoxDecoration(
-                    color: Colors.black26,
-                    shape: BoxShape.circle,
-                  ),
-                  child:const Icon(Icons.flutter_dash),
+                  child: const Text('Terms of Service | Privacy Policy'),
                 ),
-                ListTile(
-                  onTap: () {},
-                  leading:const Icon(Icons.lock),
-                  title:const Text('Roles'),
-                ),
-                ListTile(
-                  onTap: () {},
-                  leading:const Icon(Icons.account_circle_rounded),
-                  title: const Text('Users'),
-                ),
-                ListTile(
-                  onTap: () {},
-                  leading: const Icon(Icons.business),
-                  title: const Text('Bussiness'),
-                ),
-                ListTile(
-                  onTap: () {},
-                  leading: const Icon(Icons.category),
-                  title: const Text('Categories'),
-                ),
-                 ListTile(
-                  onTap: () {},
-                  leading: const Icon(Icons.production_quantity_limits),
-                  title: const Text('Products'),
-                ),
-                 ListTile(
-                  onTap: () {},
-                  leading: const Icon(Icons.pages),
-                  title: const Text('Reports'),
-                ),
-                ListTile(
-                  onTap: () {},
-                  leading: const Icon(Icons.person),
-                  title: const Text('Designations'),
-                ),
-                ListTile(
-                  onTap: () {},
-                  leading: const Icon(Icons.person),
-                  title: const Text('Sales'),
-                ),
-                const Spacer(),
-                DefaultTextStyle(
-                  style: const TextStyle(
-                    fontSize: 12,
-                    color: Colors.white54,
-                  ),
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(
-                      vertical: 16.0,
-                    ),
-                    child:const Text('Terms of Service | Privacy Policy'),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
     );
   }
-   void _handleMenuButtonPressed() {
+
+  void _handleMenuButtonPressed() {
     // NOTICE: Manage Advanced Drawer state through the Controller.
     // _advancedDrawerController.value = AdvancedDrawerValue.visible();
     _advancedDrawerController.showDrawer();

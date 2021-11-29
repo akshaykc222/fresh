@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:seed_sales/screens/dashbord/body.dart';
+import 'package:seed_sales/screens/roles/componets/roles_list.dart';
 
 import 'constants.dart';
+import 'screens/roles/body.dart';
 
 class RouterPage {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case adminPanel:
         return MaterialPageRoute(builder: (_) => const DashBoard());
-      // case roles:
-      //   return MaterialPageRoute(builder: (_) => const UserRoles());
+      case roles:
+        return MaterialPageRoute(builder: (_) => const RoleList());
+      case roleList:
+        return MaterialPageRoute(builder: (_) => const RoleList());
       // case userCreation:
       //   return MaterialPageRoute(builder: (_) => const UserCreation());
       // case business:
