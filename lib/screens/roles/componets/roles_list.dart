@@ -32,7 +32,7 @@ class _RoleListState extends State<RoleList> {
     SizeConfig().init(context);
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size(MediaQuery.of(context).size.width, 60),
+        preferredSize: Size(MediaQuery.of(context).size.width, 80),
         child: Container(
           color: blackColor,
           child: Column(
@@ -160,6 +160,10 @@ class UserRoleList extends StatelessWidget {
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
+            const Icon(
+              Icons.delete,
+              color: whiteColor,
+            )
           ]),
         ));
   }

@@ -36,6 +36,7 @@ const whiteColor = Colors.white;
 const blackColor = Color(0xFF000000);
 const lightBlack = Color(0xFF404040);
 const black90 = Color(0xFF0d0d0d);
+const textColor = whiteColor;
 double fontResize(BuildContext context, double size) {
   double unitHeightValue = MediaQuery.of(context).size.height * 0.01;
   return size * unitHeightValue;

@@ -14,30 +14,48 @@ class UserRoles extends StatelessWidget {
       appBar: appBar("User Roles", [], context),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Column(
-          children: const [RoleFields()],
+        child: Container(
+          color: lightBlack,
+          child: Column(
+            children: const [RoleFields()],
+          ),
         ),
       ),
-      floatingActionButton: Container(
-        width: 100,
-        height: 50,
-        decoration: BoxDecoration(
-            color: primaryColor, borderRadius: BorderRadius.circular(20.0)),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
-            Icon(
-              Icons.save,
-              color: Colors.white,
-            ),
-            Text(
-              save,
-              style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-            )
-          ],
+      // floatingActionButton: Container(
+      //   width: 100,
+      //   height: 50,
+      //   decoration: BoxDecoration(
+      //       color: primaryColor, borderRadius: BorderRadius.circular(20.0)),
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //     children: const [
+      //       Icon(
+      //         Icons.save,
+      //         color: Colors.white,
+      //       ),
+      //       Text(
+      //         save,
+      //         style:
+      //             TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+      //       )
+      //     ],
+      //   ),
+      // ),
+
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: lightBlack,
+        onPressed: () {
+          Navigator.pushNamed(context, roleList);
+        },
+        child: Center(
+          child: InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, roleList);
+              },
+              child: const Icon(Icons.add)),
         ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

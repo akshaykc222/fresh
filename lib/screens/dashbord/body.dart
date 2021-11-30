@@ -71,13 +71,14 @@ class _DashBoardState extends State<DashBoard>
               right: 0,
               child: AnimatedSwitcher(
                 switchInCurve: Curves.easeIn,
-                duration: const Duration(milliseconds: 500),
-                reverseDuration: const Duration(milliseconds: 500),
+                switchOutCurve: Curves.easeOut,
+                duration: const Duration(milliseconds: 300),
+                reverseDuration: const Duration(milliseconds: 300),
                 child: Container(
                   width: double.infinity,
                   color: whiteColor,
                   child: provider.isOpen
-                      ? Container(key: key1, child: const AdminMenu())
+                      ? const AdminMenu()
                       : Container(
                           key: key2,
                         ),
