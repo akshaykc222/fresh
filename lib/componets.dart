@@ -20,16 +20,21 @@ PreferredSizeWidget appBar(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                child: Container(
-                  decoration: const BoxDecoration(
-                      color: lightBlack, shape: BoxShape.circle),
-                  child: const Icon(
-                    Icons.arrow_back,
-                    size: 30,
-                    color: Colors.white,
+              InkWell(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  child: Container(
+                    decoration: const BoxDecoration(
+                        color: lightBlack, shape: BoxShape.circle),
+                    child: const Icon(
+                      Icons.arrow_back,
+                      size: 30,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),

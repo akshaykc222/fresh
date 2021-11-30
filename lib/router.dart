@@ -11,7 +11,7 @@ class RouterPage {
       case adminPanel:
         return MaterialPageRoute(builder: (_) => const DashBoard());
       case roles:
-        return MaterialPageRoute(builder: (_) => const RoleList());
+        return MaterialPageRoute(builder: (_) => const UserRoles());
       case roleList:
         return MaterialPageRoute(builder: (_) => const RoleList());
       // case userCreation:
