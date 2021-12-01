@@ -142,11 +142,25 @@ class _SelectBussinesState extends State<SelectBussines> {
             return DropdownButtonFormField(
               value: provider.selectedDropdownvalue,
               icon: const Icon(Icons.keyboard_arrow_down),
-              decoration: InputDecoration(
-                  labelText: "Role",
+              decoration: const InputDecoration(
+                  labelText: "Type",
+                  labelStyle: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: textColor),
                   floatingLabelBehavior: FloatingLabelBehavior.auto,
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20))),
+                  hintStyle: TextStyle(color: textColor),
+                  filled: true,
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.white30,
+                      width: 2.0,
+                    ),
+                  ),
+                  disabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white30)),
+                  border: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white30))),
               items: provider.roleList
                   .map((e) => DropdownMenuItem(value: e, child: Text(e)))
                   .toList(),
