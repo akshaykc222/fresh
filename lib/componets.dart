@@ -91,3 +91,50 @@ Widget defaultButton(double width, String title) {
     ),
   );
 }
+
+Widget columUserTextFileds(String label, String hint, TextInputType keyboard,
+    TextEditingController controller) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+    child: TextFormField(
+      validator: (value) {
+        if (value!.isEmpty) {
+          return "Please Enter value for $hint";
+        }
+        return null;
+      },
+      controller: controller,
+      keyboardType: keyboard,
+      style: const TextStyle(color: textColor),
+      decoration: InputDecoration(
+          labelText: label,
+          labelStyle: const TextStyle(
+              fontSize: 20, fontWeight: FontWeight.bold, color: textColor),
+          floatingLabelBehavior: FloatingLabelBehavior.auto,
+          hintText: hint,
+          hintStyle: const TextStyle(color: textColor),
+          filled: true,
+          enabledBorder: const UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.white30,
+              width: 2.0,
+            ),
+          ),
+          disabledBorder: const UnderlineInputBorder(
+              borderSide: BorderSide(color: Colors.white30)),
+          border: const UnderlineInputBorder(
+              borderSide: BorderSide(color: Colors.white30))),
+    ),
+  );
+}
+
+Widget headingText(String txt) {
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Text(
+      txt,
+      style: const TextStyle(
+          color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
+    ),
+  );
+}

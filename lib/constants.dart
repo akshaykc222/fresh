@@ -24,7 +24,7 @@ const String save = "Save";
 const String addcompany = "Add company";
 const String create = "Create";
 const String add = "Add";
-
+const String cancel = "Cancel";
 const String addUserRole = "Add User Role";
 //images
 
